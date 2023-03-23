@@ -1,5 +1,6 @@
 package com.fanstudy.pk1;
 
+import com.fanstudy.pk1.Student;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
