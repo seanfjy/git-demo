@@ -12,9 +12,11 @@
 *.iws
 .idea/
 .mvn/
+*.cmd
 
 # Maven
 target/
+mvnw
 
 # Gradle
 build
