@@ -1,8 +1,11 @@
 package com.fanstudy.quickweb.controller;
 
+import lombok.val;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDateTime;
 
@@ -23,6 +26,15 @@ public class QuickController {
         model.addAttribute("time", LocalDateTime.now());
         //指定视图,显示数据
         return "quick";//它是视图文件的名称
+    }
+
+    @GetMapping("/hello")
+    public ModelAndView hello(){
+        val mv = new ModelAndView();
+        mv.addObject("name","安松松");
+        mv.addObject("age",23);
+        mv.setViewName("hello");
+        return mv;
     }
 
 
