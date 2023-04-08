@@ -7,16 +7,12 @@ import java.util.concurrent.TimeUnit;
  * @auther zzyy
  * @create 2022-01-17 18:59
  */
-public class CompletableFutureCombineDemo
-{
-    public static void main(String[] args)
-    {
+public class CompletableFutureCombineDemo {
+    public static void main(String[] args) {
 
-//        standard();
+        // standard();
 
         combine();
-
-
 
     }
 
@@ -44,7 +40,7 @@ public class CompletableFutureCombineDemo
     private static void standard() {
         CompletableFuture<Integer> completableFuture1 = CompletableFuture.supplyAsync(() -> {
             System.out.println(Thread.currentThread().getName() + "\t ---启动");
-            //暂停几秒钟线程
+            // 暂停几秒钟线程
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
@@ -55,7 +51,7 @@ public class CompletableFutureCombineDemo
 
         CompletableFuture<Integer> completableFuture2 = CompletableFuture.supplyAsync(() -> {
             System.out.println(Thread.currentThread().getName() + "\t ---启动");
-            //暂停几秒钟线程
+            // 暂停几秒钟线程
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
