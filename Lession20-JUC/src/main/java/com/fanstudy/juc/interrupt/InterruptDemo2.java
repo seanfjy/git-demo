@@ -23,7 +23,7 @@ public class InterruptDemo2
         System.out.println("t1线程默认的中断标识："+t1.isInterrupted());//false
 
         //暂停毫秒
-        try { TimeUnit.MILLISECONDS.sleep(2); } catch (InterruptedException e) { e.printStackTrace(); }
+        try { TimeUnit.NANOSECONDS.sleep(1); } catch (InterruptedException e) { e.printStackTrace(); }
         t1.interrupt();//true
         System.out.println("t1线程调用interrupt()后的的中断标识01："+t1.isInterrupted());//true
 

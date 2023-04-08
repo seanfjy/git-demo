@@ -12,6 +12,7 @@ public class LockSyncDemo
 
     public void m1()
     {
+        //代码块  使用的是monitorenter 和monitorexit
         synchronized (object)
         {
             System.out.println("----hello synchronized code block");

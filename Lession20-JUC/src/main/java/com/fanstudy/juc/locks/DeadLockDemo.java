@@ -3,6 +3,11 @@ package com.fanstudy.juc.locks;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 检测死锁:
+ *      jps -l
+ *      jstack 进程编号
+*
+ *   图形化:   jconsole
  * @auther zzyy
  * @create 2022-01-18 19:37
  */
