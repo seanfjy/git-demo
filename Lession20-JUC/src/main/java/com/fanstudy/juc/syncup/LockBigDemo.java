@@ -1,5 +1,7 @@
 package com.fanstudy.juc.syncup;
 
+import org.openjdk.jol.info.ClassLayout;
+
 /**
  * @auther zzyy
  * 锁粗化
@@ -31,6 +33,7 @@ public class LockBigDemo
                 System.out.println("222222");
                 System.out.println("333333");
                 System.out.println("444444");
+                System.out.println(ClassLayout.parseInstance(objectLock).toPrintable());
             }
 
         },"t1").start();
