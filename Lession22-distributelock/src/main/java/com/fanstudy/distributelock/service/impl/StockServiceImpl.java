@@ -1,17 +1,18 @@
 package com.fanstudy.distributelock.service.impl;
 
-import org.apache.commons.lang3.StringUtils;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
 
 import com.fanstudy.distributelock.mapper.StockMapper;
 import com.fanstudy.distributelock.service.StockService;
 
 import lombok.RequiredArgsConstructor;
-
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 @Service
 // @Scope(value = "prototype",proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -34,7 +35,7 @@ public class StockServiceImpl implements StockService {
         while (Boolean.FALSE.equals(redisTemplate.opsForValue().setIfAbsent("lock", uuid, 30, TimeUnit.SECONDS))) {
             //重试;循环
             try {
-                Thread.sleep(50);
+                Thread.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -53,9 +54,20 @@ public class StockServiceImpl implements StockService {
             }
         } finally {
             //防误删
-            if (StringUtils.equals(redisTemplate.opsForValue().get("lock"),uuid)){
-                redisTemplate.delete("lock");
-            }
+
+            //使用lua脚本
+            String script = """
+                    if redis.call('get',KEYS[1]) == ARGV[1] then
+                        return redis.call('del',KEYS[1]);
+                    else
+                        return 0;
+                    end                 
+                    """;
+
+            Boolean lock = redisTemplate.execute(new DefaultRedisScript<>(script, Boolean.class), List.of("lock"), uuid);
+//            if (StringUtils.equals(redisTemplate.opsForValue().get("lock"),uuid)){
+//                redisTemplate.delete("lock");
+//            }
         }
 
     }
