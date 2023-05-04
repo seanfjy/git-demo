@@ -18,4 +18,10 @@ public class JDKsrc {
         System.out.println("分:" + cal.get(Calendar.MINUTE));
         System.out.println("秒:" + cal.get(Calendar.SECOND));
     }
+
+    @Test
+    void testbuild() {
+        StringBuilder stringBuilder = new StringBuilder("hello,world");
+        System.out.println(stringBuilder);
+    }
 }

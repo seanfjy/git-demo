@@ -1,0 +1,31 @@
+@startuml
+class House
+note "产品" as n
+House .. n
+abstract class HouseBuilder{
+- house: House = new House()
++ buildBasic(): void
++ buildWalls(): void
++ roofed(): void
++ build(): void
+}
+class CommonHouse
+class HighBuilding
+class OtherHouse
+
+class HouseDirector{
+- houseBuilder: HouseBuilder
+}
+class Client
+
+HouseBuilder *-- House
+HouseDirector o-- HouseBuilder
+CommonHouse --|> HouseBuilder
+HighBuilding --|> HouseBuilder
+OtherHouse --|> HouseBuilder
+Client ..> HouseDirector
+Client ..> CommonHouse
+Client ..> HighBuilding
+Client ..> OtherHouse
+
+@enduml

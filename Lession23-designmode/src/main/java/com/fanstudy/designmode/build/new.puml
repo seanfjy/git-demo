@@ -1,0 +1,26 @@
+@startuml
+class Product
+abstract class Builder{
++buildPartA()
++buildPartB()
++buildPartC()
++getResult()
+}
+class ConcreteBuilder{
++buildPartA()
++buildPartB()
++buildPartC()
++getResult()
+}
+class Director{
+-builder: Builder
++construct()
+}
+
+note "builder.buildPartA();\nbuilder.buildPartB();\nbuilder.buildPartC();\nreturn builder.getResult;" as N
+
+ConcreteBuilder --|> Builder
+Builder *-- Product
+Director o-- Builder
+Director .. N
+@enduml
