@@ -1,0 +1,27 @@
+@startuml
+interface Implementor{
++ operationImp(): void
+}
+class ConcreteImplementorA{
++operationImp(): void
+}
+class ConcreteImplementorB{
++operationImp(): void
+}
+abstract class Abstraction{
+-plmp: Implementor
++operation(): void
++Abstraction(Implementor)
+}
+class RefinedAbstraction{
++operation(): void
++RefinedAbstraction(Implementor)
+}
+class Client
+
+Implementor <|..ConcreteImplementorA
+Implementor <|..ConcreteImplementorB
+Abstraction o--> Implementor
+RefinedAbstraction --|> Abstraction
+Client ..> Abstraction
+@enduml

@@ -1,6 +1,7 @@
 package com.fanstudy.designmode;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import java.util.Calendar;
 
@@ -23,5 +24,10 @@ public class JDKsrc {
     void testbuild() {
         StringBuilder stringBuilder = new StringBuilder("hello,world");
         System.out.println(stringBuilder);
+    }
+
+    @Test
+    void springmvc() {
+        DispatcherServlet dispatcherServlet;
     }
 }

@@ -1,0 +1,19 @@
+@startuml
+interface Interface{
++m1(): void
++m2(): void
++m3(): void
+}
+abstract class AbsAdapter
+
+AbsAdapter ..|> Interface
+
+note "空实现接口的方法" as n
+AbsAdapter .. n
+
+class A
+A ..> AbsAdapter
+
+
+
+@enduml
