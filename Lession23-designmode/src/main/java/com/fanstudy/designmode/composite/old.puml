@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/class-diagram
+class 学校
+class 学院
+class 系
+学校 <|-- 学院
+学院 <|-- 系
+
+
+@enduml
