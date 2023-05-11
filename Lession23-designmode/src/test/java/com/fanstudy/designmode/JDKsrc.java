@@ -1,12 +1,12 @@
 package com.fanstudy.designmode;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.web.servlet.DispatcherServlet;
-
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Calendar;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.web.servlet.DispatcherServlet;
 
 public class JDKsrc {
 
@@ -37,5 +37,10 @@ public class JDKsrc {
     @Test
     void testdecorator() throws FileNotFoundException {
         DataInputStream dataInputStream = new DataInputStream(new FileInputStream(""));
+    }
+
+    @Test
+    void mybatis() {
+
     }
 }
