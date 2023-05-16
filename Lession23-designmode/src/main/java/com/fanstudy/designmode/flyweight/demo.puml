@@ -1,0 +1,25 @@
+@startuml
+abstract class WebSite{
++ use(): void
+}
+class ConcreteWebSite{
+- type: String
++ use(): void
+}
+ConcreteWebSite --|> WebSite
+
+class WebSiteFactory
+WebSiteFactory o-- WebSite
+
+class User
+class Client
+
+note "User享元模式的外部状态" as no
+
+Client ..> WebSiteFactory
+Client ..> ConcreteWebSite
+Client ..> User
+ConcreteWebSite ..> User
+
+User .. no
+@enduml

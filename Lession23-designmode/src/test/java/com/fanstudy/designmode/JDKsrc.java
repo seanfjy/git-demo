@@ -43,4 +43,9 @@ public class JDKsrc {
     void mybatis() {
 
     }
+
+    @Test
+    void testflyweight() {
+        Integer i = 123;
+    }
 }
