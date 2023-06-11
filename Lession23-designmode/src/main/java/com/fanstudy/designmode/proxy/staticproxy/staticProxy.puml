@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+interface ITeacherDao{
++ tesch(): void
+}
+class TeacherDao{
++ teach(): void
+}
+class TeacherDaoProxy{
++ teach(): void
+}
+TeacherDao ..|> ITeacherDao
+TeacherDaoProxy ..|> ITeacherDao
+
+TeacherDaoProxy o-- TeacherDao
+
+note "1.创建TeacherDaoProxy代理对象\n2.创建TeacherDao对象\n3.将TeacherDao对象,交给TeacherDaoProxy对象执行方法" as no
+
+class Client
+Client ..> TeacherDaoProxy
+Client ..> TeacherDao
+Client .. no
+@enduml
