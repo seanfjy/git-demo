@@ -1,7 +1,9 @@
 package com.fanstudy.project;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -98,6 +100,21 @@ public class MyBinaryTree {
         }
     }
 
+    public static void  levelOrderTraveral(TreeNode root){
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+        while (!queue.isEmpty()){
+            TreeNode node = queue.poll();
+            System.out.println(node.data);
+            if (node.leftChild != null){
+                queue.offer(node.leftChild);
+            }
+            if (node.rightChild != null){
+                queue.offer(node.rightChild);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         LinkedList<Integer> inputList =
             new LinkedList<>(Arrays.asList(3, 2, 9, null, null, 10, null, null, 8, null, 4));
@@ -110,6 +127,9 @@ public class MyBinaryTree {
         inOrderTraveral(treeNode);
         System.out.println("后续遍历递归: ");
         PostOrderTraveral(treeNode);
+        System.out.println("层序遍历:");
+        levelOrderTraveral(treeNode);
+
 
     }
 
