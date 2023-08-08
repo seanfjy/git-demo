@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class SoyaMilk{
++ make(): void
++ select(): void
++ add(): void
++ soak(): void
++ beat(): void
+}
+
+class BlackBeanSoyaMilk
+class PennutSoyaMilk
+BlackBeanSoyaMilk --|> SoyaMilk
+PennutSoyaMilk --|> SoyaMilk
+
+Client ..> SoyaMilk
+Client ..> BlackBeanSoyaMilk
+
+@enduml

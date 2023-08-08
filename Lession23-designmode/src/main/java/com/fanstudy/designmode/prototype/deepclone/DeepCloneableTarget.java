@@ -1,11 +1,10 @@
 package com.fanstudy.designmode.prototype.deepclone;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 public class DeepCloneableTarget implements Serializable,Cloneable {
 
-    @Serial
+//    @Serial
     private static final long serialVersionUID = 1L;
 
     private String cloneName;
