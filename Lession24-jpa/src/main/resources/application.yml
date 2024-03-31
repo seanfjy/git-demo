@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Lession24-jpa
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.15.127.13:3306/jpa_tst?useSSL=false&serverTimezone=UTC
+    username: root
+    password: fjy123456
+    hikari:
+      connectionTimeout: 5000
+      maximumPoolSize: 10
+      minimumIdle: 5
+
+server:
+  port: 8080
