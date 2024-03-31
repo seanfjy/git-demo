@@ -1,0 +1,12 @@
+
+fdfs:
+  so-timeout: 15001 # 超时时间
+  connect-timeout: 6001 # 连接超时时间
+  pool:
+    max-total: 200   # 连接池最大数量
+    max-total-per-key: 50  # 单个tracker最大连接数
+    max-wait-millis: 5000 # 连接耗尽最大等待时间 毫秒
+  thumb-image: # 缩略图
+    width: 60
+    height: 60
+  tracker-list: 106.15.127.13:22122
