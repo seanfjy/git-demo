@@ -7,6 +7,8 @@ import java.util.StringJoiner;
 
 /**
  * 用连续自然数之和来表达整数
+ *
+ * 滑动窗口
  */
 public class N_64 {
     public static void main(String[] args) {

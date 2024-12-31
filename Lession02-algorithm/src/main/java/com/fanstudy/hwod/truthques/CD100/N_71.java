@@ -2,6 +2,9 @@ package com.fanstudy.hwod.truthques.CD100;
 
 import java.util.Scanner;
 
+/**
+ * 绘图机器
+ */
 public class N_71 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

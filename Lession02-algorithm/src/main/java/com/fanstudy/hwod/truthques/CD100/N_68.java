@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 /**
  * 解密犯罪时间
+ * 深度优先,全排列
  */
 public class N_68 {
 
